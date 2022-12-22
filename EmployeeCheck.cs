@@ -4,35 +4,40 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EmployeeWageProblem
+namespace Employeewageproblem
 {
     public class EmployeeCheck
     {
-        public static void CheckAttendence()
+
+
+        public static void CheckAttendance()
+
         {
             int IS_FULL_TIME = 1;
-            int EMP_RATE_PER_HOUR = 20;
-
+            int IS_PART_TIME = 2;
             int empHrs = 0;
+            int EMP_RATE_PER_HOUR = 20;
             int empWage = 0;
 
             Random random = new Random();
-            int empCheck = random.Next(2);
+            int empCheck = random.Next(3);
 
-            if(empCheck==IS_FULL_TIME)
+            if (empCheck == IS_FULL_TIME)
             {
-                Console.WriteLine("Employee is present");
+
                 empHrs = 8;
+            }
+            else if (empCheck == IS_PART_TIME)
+            {
+                empHrs = 0;
             }
             else
             {
-                Console.WriteLine("Employee is Absent");
                 empHrs = 0;
             }
 
             empWage = empHrs * EMP_RATE_PER_HOUR;
-
-            Console.WriteLine("Employee : " + empWage);
+            Console.WriteLine("Employee wage : " + empWage);
         }
     }
 }
